@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    hello {{name}}
+<!--    <h1>Список книг ({{books | length}})</h1>-->
+<!--    <ul>{%for item in books %}-->
+<!--        <li>{{item.name}}</li>-->
+<!--        <li>{{item.year}}</li>-->
+<!--        <li>{{item.author}}</li>-->
+
+<!--        {%if item not in books %}-->
+<!--        <li>{{Sorry}}</li>>-->
+<!--        {% endif %}-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+    Books: {{books | length}}
+    {%for book in books %}
+    <br>
+    {{book.name}} by {{book.author}}
+    <br>
+    {%endfor%}
+    All right reserbed by {{author}}
+</body>
+</html>
