@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     {% extends "multipage_app/base.html"%}
     <meta charset="UTF-8">
-    <title>{% block title%} Hello word {%endblock}</title>
-    {% block content %} This is about page {%endblock%}
+    <title>{% block title%} Hello word {%endblock%}</title>
+
 </head>
 <body>
+
+    {% block content %}
+    <br><h1>This is about page</h1>
+    <style>
+        body {
+            background-color: brown;
+        }
+        h1 {
+            color:purple;
+            font-size:20px;
+        }
+        p {
+            width: 50%;
+            margin: 0 auto;
+            text-align:center;
+        }
+    </style>
+    <p>three</p>
+    {%endblock%}
+
 
 </body>
 </html>

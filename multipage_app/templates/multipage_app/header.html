@@ -6,8 +6,8 @@
 
 </head>
 <body>
-{% block content %} {% endblock %}
-    <a href="multipage_app/main">Main</a>
-    <a href="multipage_app/about">About</a>
+    <a href="{% url 'multipage:main' %}">Main</a>
+    <a href="{% url 'multipage:about' %}">About</a>
+    <a href="{% url 'multipage:base' %}">Base</a>
 </body>
 </html>

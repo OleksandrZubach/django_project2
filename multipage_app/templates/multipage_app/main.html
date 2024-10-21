@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     {% extends "multipage_app/base.html" %}
     <meta charset="UTF-8">
-    {% block title%} This is main page {% endblock %}
+    <title>{% block title%} This is main page {% endblock %}</title>
+
 </head>
 <body>
-    <a href=""></a>
+
+    {% block content %}
+    <br><h1>This is main page</h1>
+        <style>
+        body {
+            background-color: lightgreen;
+        }
+        h1 {
+            color:blue;
+            font-size:40px;
+        }
+        p {
+            width: 50%;
+            margin: 0 auto;
+            text-align:center;
+        }
+    </style>
+    <p>two</p>
+    {%endblock%}
+
+
+    <a href="{% url 'multipage:about' %}">About</a>
+    <a href="{% url 'multipage:base' %}">Base</a>
 </body>
 </html>

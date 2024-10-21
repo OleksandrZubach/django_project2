@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quessgame',
     'helloapp',
-    'multipage_app'
+    'multipage_app',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
