@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'quessgame',
     'helloapp',
     'multipage_app',
-    'crispy_forms'
+    'crispy_forms',
+    'crispy-bootsrap5'
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
+CRISPY_ALLOWED_TEMPLATE_PACS = 'bootsrap5'
 
 
 # Database

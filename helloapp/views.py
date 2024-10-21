@@ -38,15 +38,12 @@ def hello(request,name):
 #     resp = HttpResponse('C is for cookie and that is good enough for me...')
 #     return resp
 
-
 def id(request, number):
     return HttpResponse(f'Number {number}')
-
 
 def req(request):
     name = request.GET['name']
     return HttpResponse(f'Name {name}')
-
 
 def calc(request, a, b):
     return HttpResponse(f"A*B = {a*b}")

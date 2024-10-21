@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
+
     <h1>Hello in Library {{ name }}</h1>
     <p>Visits: {{ count_visit }}</p>
 
@@ -31,10 +34,11 @@
     </ul>
 
     <br><h3>Custom form</h3>
-    <hr>
+
+    {% load crispy_forms_tags %}
     <form action="" method="post">
         {% csrf_token %}
-        {{form.as_table}}
+        {{form|crispy}}
         <input type="submit">
     </form>
 </body>
