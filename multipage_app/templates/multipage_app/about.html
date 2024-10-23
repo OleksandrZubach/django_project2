@@ -1,33 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    {% extends "multipage_app/base.html"%}
+    {% extends "multipage_app/base.html" %}
     <meta charset="UTF-8">
-    <title>{% block title%} Hello word {%endblock%}</title>
+    <title>{% block title %} Contact Us {% endblock %}</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Встановлюємо фон */
+            font-family: 'Arial', sans-serif;
+            margin: 0; /* Видаляємо відступи */
+            padding: 0; /* Видаляємо відступи */
+        }
 
+        h1 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-section {
+            width: 60%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #0057B8;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #003A70;
+        }
+    </style>
 </head>
 <body>
 
     {% block content %}
-    <br><h1>This is about page</h1>
-    <style>
-        body {
-            background-color: brown;
-        }
-        h1 {
-            color:purple;
-            font-size:20px;
-        }
-        p {
-            width: 50%;
-            margin: 0 auto;
-            text-align:center;
-        }
-    </style>
-    <p>three</p>
-    {%endblock%}
+    <br><h1>Зв'яжіться з Нами</h1>
 
+    <div class="contact-section">
+        <p>Ми завжди раді почути ваші відгуки та пропозиції. Зв'яжіться з нами будь-яким зручним для вас способом:</p>
+
+        <div class="contact-info">
+            <p>Email: info@dynamokyiv.com</p>
+            <p>Телефон: +380 44 123 4567</p>
+            <p>Адреса: вул. Грушевського, 3, Київ, Україна</p>
+        </div>
+    </div>
+
+    {% endblock %}
 
 </body>
 </html>
