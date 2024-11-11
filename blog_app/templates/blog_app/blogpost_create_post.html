@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog Post</title>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Основні стилі для тіла */
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #e8f1f2;  /* Світло-блакитний фон */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #444;
+        }
+
+        /* Контейнер для форми */
+        .form-container {
+            background: #fefefe;  /* Білий фон */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+        }
+
+        /* Заголовок */
+        h2 {
+            color: #2e4053;  /* Темно-синій для заголовка */
+            font-size: 2.2em;  /* Більший розмір */
+            margin-bottom: 40px;
+        }
+
+        /* Стилі для форми */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            margin-bottom: 20px;
+            padding: 14px;
+            font-size: 1.2em;  /* Збільшений шрифт */
+            border-radius: 8px;
+            border: 1px solid #b0c4b1;  /* Легкий зелений колір для рамки */
+            box-sizing: border-box;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #67a0c2;  /* Синій колір рамки при фокусі */
+            outline: none;
+        }
+
+        /* Стиль кнопки */
+        form button {
+            background-color: #ff8c00;  /* Помаранчевий фон */
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1.2em;  /* Збільшений шрифт */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #e07b00;  /* Трохи темніший помаранчевий на ховер */
+        }
+
+        /* Підтримка для адаптивності */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            form button {
+                padding: 12px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер для форми -->
+    <div class="form-container">
+        <h2>Create Blog Post</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

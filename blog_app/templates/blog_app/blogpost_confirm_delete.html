@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion</title>
+    <style>
+        /* Загальний стиль сторінки */
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #fce4ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Контейнер для форми видалення */
+        .delete-form {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .delete-form:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Заголовок підтвердження видалення */
+        h3 {
+            color: #d32f2f; /* Яскраво червоний */
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Стилі для кнопок */
+        .btn {
+            display: inline-block;
+            background-color: #8bc34a; /* Світло-зелений */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            margin: 10px;
+            width: 120px;
+        }
+
+        .btn:hover {
+            background-color: #7cb342; /* Трохи темніший зелений */
+        }
+
+        .btn-danger {
+            background-color: #d32f2f; /* Яскраво червоний */
+            margin-top: 15px;
+        }
+
+        .btn-danger:hover {
+            background-color: #b71c1c; /* Темно червоний */
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" class="delete-form">
+        {% csrf_token %}
+        <h3>Ви впевнені, що хочете видалити пост: "{{ blogpost.title }}"?</h3>
+        <!-- Кнопка підтвердження -->
+        <button type="submit" class="btn btn-danger">Підтвердити</button>
+        <!-- Кнопка відміни -->
+        <a href="{% url 'blog_app:post_list' %}" class="btn">Відміна</a>
+    </form>
+
+</body>
+</html>

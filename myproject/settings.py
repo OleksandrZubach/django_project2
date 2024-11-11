@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'helloapp',
     'multipage_app',
     'crispy_forms',
+    'blog_app'
 ]
 
 MIDDLEWARE = [

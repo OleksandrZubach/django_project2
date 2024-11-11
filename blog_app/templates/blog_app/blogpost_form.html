@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        /* Стиль тіла сторінки */
+        body {
+            font-family: 'Verdana', sans-serif;
+            background: linear-gradient(135deg, #eceff1, #cfd8dc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Основний контейнер форми */
+        .styled-form {
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            max-width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .styled-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Заголовок форми */
+        .styled-form h2 {
+            color: #37474f;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        /* Стиль для текстових полів */
+        .styled-form p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #607d8b;
+        }
+
+        .styled-form input[type="text"],
+        .styled-form input[type="password"],
+        .styled-form input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #cfd8dc;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .styled-form input[type="text"]:focus,
+        .styled-form input[type="password"]:focus,
+        .styled-form input[type="email"]:focus {
+            border-color: #29b6f6;
+            outline: none;
+        }
+
+        /* Кнопка відправки */
+        .submit-btn {
+            background: #0288d1;
+            color: #ffffff;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #0277bd;
+            box-shadow: 0 4px 15px rgba(0, 39, 109, 0.3);
+        }
+
+        /* Адаптивність для мобільних пристроїв */
+        @media (max-width: 600px) {
+            .styled-form {
+                width: 90%;
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" class="styled-form">
+        <h2>Оновити Дані</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Оновити" class="submit-btn">
+    </form>
+
+</body>
+</html>

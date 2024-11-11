@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blogpost.title }}</title>
+    <style>
+        /* Основний стиль для тіла сторінки */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #e8f0fe;
+            color: #3a3a3a;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Контейнер для посту */
+        .post-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            max-width: 700px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .post-container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Заголовок посту */
+        h1 {
+            font-size: 2rem;
+            color: #1e88e5;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Основний текст посту */
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4b4b4b;
+            margin: 15px 0;
+        }
+
+        /* Інформація про пост */
+        .post-info {
+            font-size: 0.9rem;
+            color: #607d8b;
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        .post-info i {
+            font-style: italic;
+            color: #78909c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="post-container">
+        <h1>{{ blogpost.title }}</h1>
+        <p>{{ blogpost.text }}</p>
+
+        <div class="post-info">
+            <p><i>Опубліковано: {{ blogpost.created_at }}</i></p>
+            <p><i>Оновлено: {{ blogpost.updated_at }}</i></p>
+        </div>
+    </div>
+
+</body>
+</html>

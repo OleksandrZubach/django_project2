@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('helloapp.urls')),
     path('', include("home.urls")),
     path('', include("quessgame.urls")),
-    path('', include('multipage_app.urls'))
+    path('', include('multipage_app.urls')),
+    path('', include('blog_app.urls')),
 ]
