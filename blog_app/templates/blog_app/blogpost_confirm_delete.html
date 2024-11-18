@@ -70,15 +70,13 @@
     </style>
 </head>
 <body>
-
     <form action="" method="post" class="delete-form">
         {% csrf_token %}
         <h3>Ви впевнені, що хочете видалити пост: "{{ blogpost.title }}"?</h3>
-        <!-- Кнопка підтвердження -->
         <button type="submit" class="btn btn-danger">Підтвердити</button>
-        <!-- Кнопка відміни -->
-        <a href="{% url 'blog_app:post_list' %}" class="btn">Відміна</a>
-    </form>
+        <a href="{% url 'blog_app:blogpost_list' %}" class="btn">Назад</a>
 
+    </form>
 </body>
+
 </html>
